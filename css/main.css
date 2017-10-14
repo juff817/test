@@ -1,0 +1,432 @@
+/*
+* @Author: Juff
+* @Date:   2017-08-25 16:49:03
+* @Last Modified by:   Juff
+* @Last Modified time: 2017-09-11 15:54:52
+*/
+body{font-size: 15px;}
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #D43C33;
+    padding: 17px 10px;
+}
+.topbar .toplogo svg{
+    width: 142px;
+    height: 25px;
+    vertical-align: top;
+}
+.topbar a{
+    position: relative;
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 10px;
+    color: #fff;
+    vertical-align: top;
+}
+.topbar a::after{
+    content:'';
+    position: absolute;
+    top : 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+}
+.globalTabs{
+    width: 100%;
+}
+.tabs{
+    display: flex;
+    position: relative;
+    line-height: 40px;
+}
+.tabs::after{
+    content:'';
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #EEEEEE;
+}
+.tabs >li{
+    width: 33.333333%;
+    text-align: center;
+}
+.tabs >li div{
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+    vertical-align: top;
+}
+.tabs >li.active{
+    color: #D33A31;
+}
+.tabs >li.active div::after{
+    content:'';
+    position: absolute;
+    z-index: 2;
+    height: 2px;
+    background: #D33A31;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+}
+.page .top{
+    display: block;
+    width: 100%;
+    height: 104px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #fff;
+}
+.tab-content{
+    margin-top: 104px;
+
+}
+.tab-content .page-1{
+    padding-top: 20px;
+}
+.tab-content .tabpage > li{
+    display: none;
+}
+.tab-content .tabpage > li.active {
+    display: block;
+}
+.tab-content .playlists{
+    padding-bottom: 24px;
+}
+.tab-content .playlists h2{
+    position: relative;
+    font-size: 17px;
+    line-height: 20px;
+    padding-left: 9px;
+    margin-bottom: 14px;
+}
+.tab-content .playlists h2::after{
+    content:'';
+    position: absolute;
+    width: 2px;
+    height:16px;
+    top: 50%;
+    left: 0;
+    background: #D33A31;
+    margin-top: -9px;
+}
+.tab-content .playlists .songs{
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    justify-content: space-between;
+}
+.tab-content .playlists .songs li{
+    position: relative;
+    width: 32.8%;
+    height: 172px;
+    padding-bottom: 16px;
+}
+.tab-content .playlists .cover img{
+    width: 100%;
+    height: 136px;
+}
+.tab-content .playlists .songs p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.2;
+    padding: 3px 2px 0 6px;
+}
+.tab-content .playlists .songs span{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    z-index: 3;
+    font-size: 12px;
+    color: #fff;
+    text-shadow: 1px 0 0 rgba(0,0,0,.15);
+    vertical-align: middle;
+}
+.tab-content .playlists .songs svg{
+    margin-right: 3px;
+}
+.tab-content .newmusic h2{
+    position: relative;
+    font-size: 17px;
+    line-height: 20px;
+    padding-left: 9px;
+    margin-bottom: 14px;
+}
+.tab-content .newmusic h2::after{
+    content:'';
+    position: absolute;
+    width: 2px;
+    height:16px;
+    top: 50%;
+    left: 0;
+    background: #D33A31;
+    margin-top: -9px;
+}
+.tab-content .newmusic a{
+    display: block;
+    padding-left: 10px;
+}
+.tab-content .onemusic{
+    display: flex;
+    justify-content: space-between;
+    height: 55px;
+    border-bottom: 1px solid #F6F6F7;
+}
+.tab-content .musicleft{
+    flex: auto;
+    padding: 6px 0;
+}
+.tab-content .musicleft > h3{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 17px;
+    line-height: 25px;
+}
+.tab-content .musicleft > h3 span{
+    margin-left: 4px;
+    color: #888;
+}
+.tab-content .musicleft > p{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+    color: #888;
+    line-height: 18px;
+}
+.tab-content .musicleft > p >svg{
+    display: inline-block;
+    font-size: 16px;
+    width: 12px;
+    height: 8px;
+    margin-right: 4px;
+    fill: #FE703A;
+    transform: scale(1.8);
+    vertical-align: middle;
+}
+.tab-content .playbuttom{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.tab-content .playbuttom > svg{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    vertical-align: middle;
+    fill: #AAAAAA;
+}
+.tab-content .footer{
+    margin-top: 4px;
+    background: url('http://owzgsczvw.bkt.clouddn.com/musicbg.png') no-repeat center;
+    background-size: cover;
+    text-align: center;
+}
+.tab-content .footer .logo{
+    max-width: 414px;
+    padding-top: 16.9%;
+}
+.tab-content .footer .logo > svg{
+    display: block;
+    margin: 0 auto;
+    width: 230px;
+    height: 44px;
+}
+.tab-content .footer .link{
+    text-align: center;
+    margin: 15px auto 5px;
+}
+.tab-content .footer .link > a{
+    max-width: 414px;
+    display: inline-block;
+    font-size: 16px;
+    color: #d33a31;
+    line-height: 38px;
+    border-radius: 38px;
+    text-align: center;
+    padding: 0 72px;
+    border: 1px solid #d33a31;
+    vertical-align: top;
+}
+.tab-content .footer .copyright{
+    font-size: 12px;
+    color: #888;
+    line-height: 16px;
+    text-align: center;
+    transform: scale(.75);
+    padding-bottom: 36px;
+}
+@media(max-width: 375px){
+    .tab-content .footer .link > a{
+        padding: 0 47px;
+    }
+    .tab-content .playlists .cover img{
+        width: 100%;
+        height: 123px;
+    }
+    .tab-content .playlists .songs li {
+        height: 159px;
+    }
+    .tab-content .playlists .songs{
+        height: 374px;
+    }
+    .tab-content .footer .copyright{
+        padding-bottom: 20px;
+    }
+}
+@media(max-width: 320px){
+    .tab-content .footer .link > a{
+        padding: 0 26px;
+    }
+    .tab-content .footer .logo{
+        padding-top: 12%;
+    }
+    .tab-content .playlists .cover img{
+        width: 100%;
+        height: 105px;
+    }
+    .tab-content .playlists .songs li{
+        height: 141px;
+    }
+    .tab-content .playlists .songs{
+        height: 337px;
+    }
+    .tab-content .footer .copyright{
+        padding-bottom: 15px;
+    }
+}
+/*page-1*/
+.tab-content .hottop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: 161px;
+    padding-left: 20px;
+    background: url('http://owzgsczvw.bkt.clouddn.com/hot_music.jpg') no-repeat center;
+    background-size: cover;
+}
+.tab-content .hotimg{
+    display: block;
+    width: 142px;
+    height: 67px;
+    z-index: 2;
+    background: url('http://owzgsczvw.bkt.clouddn.com/index_icon.png') no-repeat -24px -30px;
+    background-size: 166px 97px;
+
+}
+.tab-content .hottime{
+    font-size: 12px;
+    margin-top: 10px;
+    color: hsla(0,0%,100%,.8);
+    transform: scale(.91);
+    transform-origin: left top;
+    z-index: 2;
+}
+.tab-content .hottop::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,.2);
+}
+.tab-content .hotlists-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+.tab-content .listsnumber .fontred{
+    color: #df3436;
+}
+.tab-content .listsnumber > li{
+    width: 28px;
+    font-size: 17px;
+    line-height: 55px;
+    color: #999;
+}
+.tab-content .allsongs{
+    display: block;
+    text-align: center;
+    line-height: 55px;
+    color: #999;
+}
+/*page-2*/
+.tab-content .searchWrapper{
+    height: 59px;
+    padding: 15px 10px;
+    border-bottom: 1px solid #F6F6F7;
+}
+.tab-content .searchbox{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    padding: 0 30px;
+    border-radius: 30px;
+    background: #ebecec;
+}
+.tab-content .searchbox .sh{
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    margin: 0 8px;
+    fill: #CBCBCC;
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+.tab-content .searchbox #cha{
+    display: none;
+    position: absolute;
+    top: 7px;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    margin: 0 8px;
+    fill: #BCBDBD;
+    vertical-align: middle;
+    transform: scale(1.0);
+}
+.tab-content .searchbox #cha.active{
+    display: block;
+}
+.tab-content .searchbox input{
+    width: 100%;
+    height: 30px;
+    line-height: 18px;
+    color: #000;
+    font-size: 14px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+#searchResult a{
+    display: block;
+    padding-left: 10px;
+}
+#searchResult .noResult{
+    padding: 20px 0;
+    line-height: 21px;
+    font-size: 14px;
+    text-align: center;
+}
