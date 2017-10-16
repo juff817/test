@@ -395,6 +395,9 @@ body{font-size: 15px;}
     vertical-align: middle;
     transform: scale(1.1);
 }
+#search::-webkit-input-placeholder{
+    color: #CACACA;
+}
 .tab-content .searchbox #cha{
     display: none;
     position: absolute;

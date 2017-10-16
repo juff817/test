@@ -14,14 +14,14 @@
             <section class="disk">
                 <div class="vinyl playing">
                     <img id="cover" src="" alt="封面">
-                    <span class="play-btn"></span>
+                    <span id="play-btn" class="play-btn"></span>
                 </div>
             </section>
             <section class="lyricbox">
                 <h2>
-                    <span id="songname" class="songname">gfdsfdsf</span>
+                    <span id="songname" class="songname"></span>
                     <span class="gang">-</span>
-                    <span id="singer" class="singer">fdsfsdfs</span>
+                    <span id="singer" class="singer"></span>
                 </h2>
                 <div class="lyric-wrapper">
                     <div class="lyric"></div>
@@ -97,12 +97,6 @@
             let current = video.currentTime
             for(var i = 0;i < array.length; i++){
                 if(array[i].time <= current && array[i+1].time > current){
-//                    if(i > 3){
-//                        let height = $('.lyric > p').height()
-//                        $('lyric').animation({
-//                            top: '-=height'
-//                        })
-//                    }
                     console.log(array[i].lrc)
                     break;
                 }else if(i === array.length - 1){
@@ -110,6 +104,16 @@
                 }
             }
         },500)
+        video.onended = function(){
+            $('#play-btn').addClass('active')
+            $('.disk .vinyl').removeClass('playing')
+        }
+        $('#play-btn').on('click',function (e) {
+            let $btn = $(e.currentTarget)
+            $btn.removeClass('active')
+            video.play()
+            $('.disk .vinyl').addClass('playing')
+        })
 
     })
 </script>

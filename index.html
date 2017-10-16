@@ -144,7 +144,7 @@
                     <div class="searchWrapper">
                         <div class="searchbox">
                             <svg class="sh" class="icon"><use xlink:href="#icon-sh"></use></svg>
-                            <input id="search" type="text" placeholder="搜索歌手、歌曲、专辑">
+                            <input id="search" type="text" placeholder="搜索歌曲、歌手、专辑">
                             <svg id="cha" class="icon"><use xlink:href="#icon-cha"></use></svg>
                         </div>
                     </div>
@@ -276,9 +276,6 @@
 
         timer = setTimeout(function () {
             timer = null
-
-
-
             var query1 = new AV.Query('Song')
             query1.contains('name', value)
             var query2 = new AV.Query('Song')
@@ -324,9 +321,7 @@
         if(value){
             $('#cha').on('click',function (e) {
                 let $dianji = $(e.currentTarget)
-                $("#search").val("");
-
-                //$('#search').attr("value","")
+                $("#search").val("")
                 $dianji.removeClass('active')
                 $('#searchResult').empty()
             })
