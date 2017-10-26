@@ -273,7 +273,9 @@
 
         let $input = $(e.currentTarget)
         let value = $input.val().trim()
-
+        if(!value){
+            $('#searchResult').empty()
+        }
         timer = setTimeout(function () {
             timer = null
             var query1 = new AV.Query('Song')

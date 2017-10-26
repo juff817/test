@@ -15,6 +15,7 @@
                 <div class="vinyl playing">
                     <img id="cover" src="" alt="封面">
                     <span id="play-btn" class="play-btn"></span>
+                    <span id="pause-btn" class="play-btn"></span>
                 </div>
             </section>
             <section class="lyricbox">
@@ -24,7 +25,7 @@
                     <span id="singer" class="singer"></span>
                 </h2>
                 <div class="lyric-wrapper">
-                    <div class="lyric"></div>
+                    <div id="lyric" class="lyric"></div>
                 </div>
             </section>
             <section class="action">
@@ -95,15 +96,26 @@
         })
         setInterval(function () {
             let current = video.currentTime
+            let height= $('#lyric > p').height() + 6
+//            console.log(height)
             for(var i = 0;i < array.length; i++){
                 if(array[i].time <= current && array[i+1].time > current){
-                    console.log(array[i].lrc)
-                    break;
-                }else if(i === array.length - 1){
-                    console.log(array[i].lrc)
+                    $('#lyric').children().eq(i).addClass('active').siblings('.active').removeClass('active')
+                    if(i > 2){
+                        $('#lyric').css({
+                            transform: 'translateY(' + (height*(2-i)) + 'px)'
+                        })
+//                    console.log(array[i].lrc)
+                        break;
+                    }
                 }
+
+
+//                else if(i === array.length - 1){
+//                    console.log(array[i].lrc)
+//                }
             }
-        },500)
+        },300)
         video.onended = function(){
             $('#play-btn').addClass('active')
             $('.disk .vinyl').removeClass('playing')

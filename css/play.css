@@ -15,7 +15,6 @@
     top: 0;
     left: 0;
     z-index: -1;
-
     filter: blur(18px); /*brightness(0.4)*/
 }
 section.pointer{
@@ -96,6 +95,21 @@ section.disk .vinyl .play-btn{
 section.disk .vinyl .play-btn.active{
     display: block;
 }
+/*section.disk .vinyl .pause-btn{*/
+    /*display: none;*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%,-50%);*/
+    /*width: 65px;*/
+    /*height: 65px;*/
+    /*z-index: 5;*/
+    /*background: url('http://owzgsczvw.bkt.clouddn.com/play_btn.png') no-repeat center;*/
+    /*background-size: cover;*/
+/*}*/
+/*section.disk .vinyl .pause-btn.active{*/
+    /*display: block;*/
+/*}*/
 section.lyricbox{
     margin: 25px;
     padding: 0 35px;
@@ -129,12 +143,16 @@ section.lyricbox .lyric{
     top: 0;
     left: 0;
     width: 100%;
+    transition: tranform 0.5S;
 }
 section.lyricbox .lyric >p{
     text-align: center;
     line-height: 1.5;
     color: hsla(0,0%,100%,.6);
-    padding-bottom: 7px;
+    padding: 3px 0;
+}
+section.lyricbox .lyric >p.active{
+    color: #fff;
 }
 section.action{
     position: absolute;
