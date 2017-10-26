@@ -101,19 +101,19 @@
             for(var i = 0;i < array.length; i++){
                 if(array[i].time <= current && array[i+1].time > current){
                     $('#lyric').children().eq(i).addClass('active').siblings('.active').removeClass('active')
-                    if(i > 2){
+                    if(i > 1){
                         $('#lyric').css({
-                            transform: 'translateY(' + (height*(2-i)) + 'px)'
+                            transform: 'translateY(' + (height*(1-i)) + 'px)'
                         })
 //                    console.log(array[i].lrc)
                         break;
                     }
+                }else if(i === array.length){
+                    $('#lyric').children().eq(i).addClass('active').siblings('.active').removeClass('active')
+                    $('#lyric').css({
+                        transform: 'translateY(' + (height*(1-i)) + 'px)'
+                    })
                 }
-
-
-//                else if(i === array.length - 1){
-//                    console.log(array[i].lrc)
-//                }
             }
         },300)
         video.onended = function(){
@@ -125,6 +125,9 @@
             $btn.removeClass('active')
             video.play()
             $('.disk .vinyl').addClass('playing')
+            $('#lyric').css({
+                transform: 'translateY(' + 0 + 'px)'
+            })
         })
 
     })
